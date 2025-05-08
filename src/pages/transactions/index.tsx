@@ -1,31 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { SearchForm } from "../../components/SearchForm";
 import { Summary } from "../../components/Summary";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
-interface Transaction {
-  id: number;
-  description: string;
-  type: 'income' | 'outcome';
-  price: number;
-  category: string;
-  createdAt: string;
-}
 
 export function Transactions(){
-  const [transactions, setTransactions] = useState<Transaction[]>([])
-
-  async function fetchTransactions() {
-    const response = await fetch('http://localhost:3000/api/transactions');
-    const data = await response.json();
-    console.log(data);
-    setTransactions(data);
-  }
-  
-  useEffect(() => {
-    fetchTransactions();
-  }, []);
+    const { transactions } = useContext(TransactionsContext);
 
     return (
         <div>
