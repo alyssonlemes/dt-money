@@ -10,11 +10,20 @@
 
     },
     {
-      "id": "1",
+      "id": "2",
       "description": "Hamburguer",
       "type": "outcome",
       "category": "Alimentação",
       "price": 60,
+      "createdAt": "2023-11-01T00:00:00.000Z"
+
+    },
+    {
+      "id": "3",
+      "description": "Rockeseat",
+      "type": "outcome",
+      "category": "Cursos",
+      "price": 1980,
       "createdAt": "2023-11-01T00:00:00.000Z"
 
     }
